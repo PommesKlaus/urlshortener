@@ -4,13 +4,11 @@ var db = require("./db.js");
 var mongo_uri = 'mongodb://localhost:27017/urlshortener';
 
 function makeid() {
-    var text = "";
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
+    var out = "";
+    var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     for( var i=0; i < 7; i++ )
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-
-    return text;
+        out += chars.charAt(Math.floor(Math.random() * chars.length));
+    return out;
 }
 
 app.get('/:uuid', function(req, res) {
