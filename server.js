@@ -1,7 +1,7 @@
 var express = require("express");
 var app = express();
 var db = require("./db.js");
-var mongo_uri = 'mongodb://localhost:27017/urlshortener';
+var mongo_uri = System.getenv("MONGOLAB_URI");
 
 function makeid() {
     var out = "";
