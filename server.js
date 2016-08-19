@@ -1,7 +1,7 @@
 var express = require("express");
 var app = express();
 var db = require("./db.js");
-var mongo_uri = System.getenv("MONGOLAB_URI");
+var mongo_uri = process.env.MONGOLAB_URI;
 
 function makeid() {
     var out = "";
